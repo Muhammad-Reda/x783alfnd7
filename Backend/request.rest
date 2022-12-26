@@ -1,0 +1,313 @@
+//Login
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "noHp": 81372969092,
+    "password": "ketua123"
+}
+
+###
+
+//cek session
+GET http://localhost:5000/me
+###
+
+//Logout
+DELETE http://localhost:5000/logout
+###
+
+
+
+
+//Get All akun
+GET http://localhost:5000/akun1
+###
+
+//Get one akun
+GET http://localhost:5000/akun/81372969094
+###
+
+//Create Akun
+POST http://localhost:5000/akun
+Content-Type: application/json
+
+{
+    "noHp":  81372969092,
+    "username":"ketua",
+    "password": "ketua123",
+    "confPassword": "ketua123",
+    "status": "ketua"
+}
+
+
+###
+
+//Update akun
+PATCH  http://localhost:5000/akun/987637483212
+Content-Type: application/json
+
+{
+    "username":"Chindi",
+    "password": "",
+    "confPassword": "",
+    "status": "ibu"
+}
+###
+
+//delete akun
+DELETE   http://localhost:5000/akun/9876543213
+###
+
+
+
+
+//Get All Ibu
+GET http://localhost:5000/ibu
+###
+
+//Get one Ibu
+GET http://localhost:5000/ibu/12050117513
+###
+
+//Create Ibu
+POST http://localhost:5000/Ibu
+Content-Type: application/json
+
+{
+    "nik": 12050117513,
+    "nama":"Chindi Ajha",
+    "tempat_lahir": "Pujud",
+    "tanggal_lahir": "1997-02-12",
+    "alamat": "Pekanbaru",
+    "rt": 1,
+    "rw": 2,
+    "agama": "islam",
+    "jumlah_anak": 2,
+    "akunNoHp": "12345678902"
+}
+
+###
+
+//Update Ibu
+PATCH  http://localhost:5000/ibu/12050117513
+Content-Type: application/json
+
+{
+    "nama":"Chindi Agustina",
+    "tempat_lahir": "Tembilahan",
+    "tanggal_lahir": "2002-02-12",
+    "alamat": "Tembilahan",
+    "rt": 3,
+    "rw":3,
+    "agama": "islam",
+    "jumlah_anak": 3,
+    "akunNoHp": 12345678902
+}
+###
+
+//delete Ibu
+DELETE http://localhost:5000/ibu/12050117513
+###
+
+
+
+
+//Get All Kader/bidan
+GET http://localhost:5000/kaderBidan
+
+###
+
+//Get one Kader/bidan
+GET http://localhost:5000/kaderBidan/81372969093
+###
+
+//Create Kader/bidan
+POST http://localhost:5000/kaderBidan
+Content-Type: application/json
+
+{
+    "nik": 81372969093,
+    "nama":"kader",
+    "tempat_lahir": "Tembilahan",
+    "tanggal_lahir": "2002-02-12",
+    "alamat": "Tembilahan",
+    "agama": "islam",
+    "status": "Aktif",
+    "jabatan": "Relawan",
+    "periode_kerja_mulai": "2022-02-12",
+    "periode_kerja_berakhir": "2023-02-12",
+    "akunNoHp": 9876543213
+}
+###
+
+//Update Kader/bidan
+PATCH  http://localhost:5000/kaderBidan/81372969093
+Content-Type: application/json
+
+{
+    "nik": 81372969093,
+    "nama":"kader",
+    "tempat_lahir": "Tembilahan",
+    "tanggal_lahir": "2002-02-12",
+    "alamat": "Tembilahan",
+    "agama": "islam",
+    "status": "aktif",
+    "jabatan": "Relawan",
+    "periode_kerja_mulai": "2022-02-12",
+    "periode_kerja_berakhir": "2023-02-12",
+    "akunNoHp": 9876543213
+}
+###
+
+//delete Kader/bidan
+DELETE http://localhost:5000/kaderBidan/81372969093
+####
+
+
+
+
+//Get All Bayi/Balita
+GET http://localhost:5000/bayi
+###
+
+//Get one Bayi/Balita
+GET http://localhost:5000/bayi/1205011751301
+###
+
+
+//Create Bayi/Balita
+POST http://localhost:5000/bayi
+Content-Type: application/json
+
+{
+    "id": 1205011751301,
+    "ibuNik":"12050117513",
+    "nama": "steven ajha",
+    "tempat_lahir": "Tembilahan",
+    "tanggal_lahir": "10-02-2022",
+    "jenis_kelamin": "laki-laki",
+    "berat_lahir": 2.3,
+    "panjang_lahir": 70.50,
+    "kondisi_persalinan": "Normal",
+    "anak_ke": "1"
+}
+###
+
+//Update Bayi/Balita
+PATCH  http://localhost:5000/bayi/1205011751301
+Content-Type: application/json
+
+{
+    "ibuNik": 12050117513,
+    "nama": "steven Agustina",
+    "tempat_lahir": "Tembilahan",
+    "tanggal_lahir": "2022-10-02",
+    "jenis_kelamin": "laki-laki",
+    "berat_lahir": 2.5,
+    "panjang_lahir": 0.5,
+    "kondisi_persalinan": "Normal",
+    "anak_ke": 1
+  }
+###
+
+//delete Bayi/Balita
+DELETE http://localhost:5000/bayi/1205011751301
+####
+
+
+
+
+//Get All Perkembangan
+GET http://localhost:5000/perkembangan
+###
+
+//Get one Perkembangan
+GET http://localhost:5000/perkembangan/1
+###
+
+//Get perkembangan berdasarkan ibu
+GET http://localhost:5000/perkembangan/ibu/081372969099
+###
+
+//Create Perkembangan
+POST http://localhost:5000/perkembangan
+Content-Type: application/json
+
+{
+    "id" : "1",
+    "bayiId" : "1205011751301",
+    "nama": "steven ajha",
+    "tanggal_pemeriksaan" : "12-11-2022",
+    "berat_badan" : "1.5",
+    "tinggi_badan" : "2.5",
+   "lingkat_kepala" : "1.2",
+    "imunisasi" : "Polio",
+    "vitaminA" : "belum"
+}
+
+###
+
+//Update Perkembangan
+PATCH  http://localhost:5000/perkembangan/1
+Content-Type: application/json
+
+{
+    "bayiId" : "1205011751301",
+    "nama": "steven ajha5",
+    "tanggal_pemeriksaan" : "2022-10-25",
+    "berat_badan" : "1.5",
+    "tinggi_badan" : "2.5",
+   "lingkat_kepala" : "1.2",
+    "imunisasi" : "Polio",
+    "vitaminA" : "belum"
+}
+
+###
+
+//delete Bayi/Balita
+DELETE http://localhost:5000/perkembangan/1
+###
+
+
+
+//Get Profile
+GET http://localhost:5000/profile/81372969092
+###
+
+//Update profile
+PATCH  http://localhost:5000/profile/81372969092
+Content-Type: application/json
+
+{
+    "username":"redha12345",
+    "password": "redha123",
+    "passwordBaru": "redha123"
+}
+###
+
+
+GET http://localhost:5000/perkembanganChart?idBayi=1205011757702
+###
+
+GET http://localhost:5000/perkembanganImunisasi?idBayi=1205011757702
+###
+
+
+GET http://localhost:5000/informasiPosyandu
+###
+
+
+POST http://localhost:5000/informasiPosyandu
+Content-Type: application/json
+
+{
+    "tanggalMulai" : "2022-12-13T06:29:23.000Z",
+    "tanggalSelesai": "2022-12-04T06:29:23.000Z",
+    "berita" : "Ini berita"
+}
+
+###
+
+GET http://localhost:5000/informasiPosyandu/1
+###
